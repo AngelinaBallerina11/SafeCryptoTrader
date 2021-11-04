@@ -7,25 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11D827DC34EA396ACF846D43 /* Pods_SafeCryptoTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */; };
 		9E36AFB42733FAF9002FD709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFB32733FAF9002FD709 /* AppDelegate.swift */; };
 		9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFB52733FAF9002FD709 /* SceneDelegate.swift */; };
-		9E36AFB82733FAF9002FD709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFB72733FAF9002FD709 /* ViewController.swift */; };
 		9E36AFBB2733FAF9002FD709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFB92733FAF9002FD709 /* Main.storyboard */; };
 		9E36AFBE2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFBC2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld */; };
 		9E36AFC02733FAFA002FD709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFBF2733FAFA002FD709 /* Assets.xcassets */; };
 		9E36AFC32733FAFA002FD709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFC12733FAFA002FD709 /* LaunchScreen.storyboard */; };
+		9E36AFCD2733FC9F002FD709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFCC2733FC9F002FD709 /* GoogleService-Info.plist */; };
+		9E36AFD227342040002FD709 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD127342040002FD709 /* LoginViewController.swift */; };
+		9E36AFD42734262C002FD709 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD32734262C002FD709 /* Validator.swift */; };
+		9E36AFD6273426F2002FD709 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD5273426F2002FD709 /* Alerts.swift */; };
+		9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD72734286D002FD709 /* SignUpViewController.swift */; };
+		9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDA273428A3002FD709 /* HomeViewController.swift */; };
+		9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDC27342C45002FD709 /* StartupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9E36AFB02733FAF9002FD709 /* SafeCryptoTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCryptoTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E36AFB32733FAF9002FD709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E36AFB52733FAF9002FD709 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9E36AFB72733FAF9002FD709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E36AFBA2733FAF9002FD709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E36AFBD2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SafeCryptoTrader.xcdatamodel; sourceTree = "<group>"; };
 		9E36AFBF2733FAFA002FD709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E36AFC22733FAFA002FD709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E36AFC42733FAFA002FD709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E36AFCC2733FC9F002FD709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9E36AFD127342040002FD709 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9E36AFD32734262C002FD709 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		9E36AFD5273426F2002FD709 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		9E36AFD72734286D002FD709 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9E36AFDA273428A3002FD709 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9E36AFDC27342C45002FD709 /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
+		B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.release.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.release.xcconfig"; sourceTree = "<group>"; };
+		D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.debug.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.debug.xcconfig"; sourceTree = "<group>"; };
+		EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeCryptoTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D827DC34EA396ACF846D43 /* Pods_SafeCryptoTrader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AD8B0FCF4382C9B1677F287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		873727AAD27926CE39B4D427 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */,
+				B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9E36AFA72733FAF9002FD709 = {
 			isa = PBXGroup;
 			children = (
 				9E36AFB22733FAF9002FD709 /* SafeCryptoTrader */,
 				9E36AFB12733FAF9002FD709 /* Products */,
+				873727AAD27926CE39B4D427 /* Pods */,
+				0AD8B0FCF4382C9B1677F287 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +94,12 @@
 		9E36AFB22733FAF9002FD709 /* SafeCryptoTrader */ = {
 			isa = PBXGroup;
 			children = (
+				9E36AFD02734202B002FD709 /* Controller */,
+				9E36AFCF27342025002FD709 /* View */,
+				9E36AFCE2734201D002FD709 /* Model */,
+				9E36AFCC2733FC9F002FD709 /* GoogleService-Info.plist */,
 				9E36AFB32733FAF9002FD709 /* AppDelegate.swift */,
 				9E36AFB52733FAF9002FD709 /* SceneDelegate.swift */,
-				9E36AFB72733FAF9002FD709 /* ViewController.swift */,
 				9E36AFB92733FAF9002FD709 /* Main.storyboard */,
 				9E36AFBF2733FAFA002FD709 /* Assets.xcassets */,
 				9E36AFC12733FAFA002FD709 /* LaunchScreen.storyboard */,
@@ -70,6 +109,41 @@
 			path = SafeCryptoTrader;
 			sourceTree = "<group>";
 		};
+		9E36AFCE2734201D002FD709 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E36AFD32734262C002FD709 /* Validator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E36AFCF27342025002FD709 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E36AFD02734202B002FD709 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9E36AFD92734288E002FD709 /* Helpers */,
+				9E36AFD127342040002FD709 /* LoginViewController.swift */,
+				9E36AFD72734286D002FD709 /* SignUpViewController.swift */,
+				9E36AFDA273428A3002FD709 /* HomeViewController.swift */,
+				9E36AFDC27342C45002FD709 /* StartupViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9E36AFD92734288E002FD709 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9E36AFD5273426F2002FD709 /* Alerts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E36AFC72733FAFA002FD709 /* Build configuration list for PBXNativeTarget "SafeCryptoTrader" */;
 			buildPhases = (
+				9A71A298034C3611743A703D /* [CP] Check Pods Manifest.lock */,
 				9E36AFAC2733FAF9002FD709 /* Sources */,
 				9E36AFAD2733FAF9002FD709 /* Frameworks */,
 				9E36AFAE2733FAF9002FD709 /* Resources */,
+				68EE00417F071484E4FA3866 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E36AFC32733FAFA002FD709 /* LaunchScreen.storyboard in Resources */,
+				9E36AFCD2733FC9F002FD709 /* GoogleService-Info.plist in Resources */,
 				9E36AFC02733FAFA002FD709 /* Assets.xcassets in Resources */,
 				9E36AFBB2733FAF9002FD709 /* Main.storyboard in Resources */,
 			);
@@ -136,14 +213,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68EE00417F071484E4FA3866 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A71A298034C3611743A703D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeCryptoTrader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9E36AFAC2733FAF9002FD709 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E36AFB82733FAF9002FD709 /* ViewController.swift in Sources */,
 				9E36AFB42733FAF9002FD709 /* AppDelegate.swift in Sources */,
+				9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */,
 				9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */,
+				9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */,
+				9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */,
+				9E36AFD42734262C002FD709 /* Validator.swift in Sources */,
+				9E36AFD227342040002FD709 /* LoginViewController.swift in Sources */,
+				9E36AFD6273426F2002FD709 /* Alerts.swift in Sources */,
 				9E36AFBE2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +412,7 @@
 		};
 		9E36AFC82733FAFA002FD709 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +441,7 @@
 		};
 		9E36AFC92733FAFA002FD709 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
