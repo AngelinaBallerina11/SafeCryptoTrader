@@ -56,8 +56,8 @@ class SignUpViewController: UIViewController {
     }
     
     fileprivate func transitionToHomeScreen() {
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        view.window?.rootViewController = homeViewController
+        let dashboard = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarViewController) as? TabBarController
+        view.window?.rootViewController = dashboard
         view.window?.makeKeyAndVisible()
     }
     

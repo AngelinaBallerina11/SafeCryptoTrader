@@ -19,6 +19,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UserRepository.getUserInfo { user, error in
+            if let error = error {
+                self.showErrorAlert(message: error.localizedDescription)
+                return
+            }
             if let user = user {
                 self.firstNameLabel.text = user.firstName
                 self.lastNameLabel.text = user.lastName
@@ -45,8 +49,10 @@ class ProfileViewController: UIViewController {
     }
     
     fileprivate func navigateToStartupScreen() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "StartupVC")
-        view.window?.rootViewController = vc
+        let vc = storyboard?.instantiateViewController(withIdentifier: "StartupVC") as! StartupViewController
         navigationController?.popToRootViewController(animated: true)
+        let newNavController = UINavigationController(rootViewController: vc)
+        navigationController?.isNavigationBarHidden = false
+        view.window?.rootViewController = newNavController
     }
 }

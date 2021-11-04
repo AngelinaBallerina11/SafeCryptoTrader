@@ -146,7 +146,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jz8-ri-WpZ">
             <objects>
-                <tabBarController id="5ex-cf-f1D" customClass="TabBarController" customModule="SafeCryptoTrader" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" id="5ex-cf-f1D" customClass="TabBarController" customModule="SafeCryptoTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tX1-9r-xTi"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HAb-hy-yba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
