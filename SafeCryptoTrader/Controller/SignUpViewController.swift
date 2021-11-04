@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -26,11 +25,11 @@ class SignUpViewController: UIViewController {
     
     func setUpElements() {
         clearError()
-        Utilities.styleTextField(firstNameTextField)
-        Utilities.styleTextField(lastNameTextField)
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(signUp)
+        UIHelper.styleTextField(firstNameTextField)
+        UIHelper.styleTextField(lastNameTextField)
+        UIHelper.styleTextField(emailTextField)
+        UIHelper.styleTextField(passwordTextField)
+        UIHelper.styleFilledButton(signUp)
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
@@ -40,16 +39,23 @@ class SignUpViewController: UIViewController {
             return
         }
         showLoading(true)
-        Auth.auth().createUser(
-            withEmail: emailTextField.text!,
-            password: passwordTextField.text!
-        ) { authResult, error in
-            if let error = error {
-                self.showError(error.localizedDescription)
-            } else {
-                //let db = Firestore.firestore()
+        UserRepository.createNewUser(
+            firstName: firstNameTextField.text!.trim(),
+            lastName: lastNameTextField.text!.trim(),
+            userName: emailTextField.text!.trim(),
+            password: passwordTextField.text!.trim()) { success, error in
+                if let error = error {
+                    self.showError(error.localizedDescription)
+                } else {
+                    self.transitionToHomeScreen()
+                }
             }
-        }
+    }
+    
+    fileprivate func transitionToHomeScreen() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     fileprivate func validateFields() -> String? {

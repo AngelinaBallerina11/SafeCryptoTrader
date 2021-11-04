@@ -1,5 +1,5 @@
 //
-//  Validator.swift
+//  FormHelper.swift
 //  SafeCryptoTrader
 //
 //  Created by Angelina Andronova on 04.11.2021.
@@ -8,6 +8,9 @@
 import Foundation
 
 extension String {
+    func trim() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
     
     func isValidEmail() -> Bool {
         if self.isEmpty {

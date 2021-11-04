@@ -18,9 +18,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(signInButton)
+        UIHelper.styleTextField(emailTextField)
+        UIHelper.styleTextField(passwordTextField)
+        UIHelper.styleFilledButton(signInButton)
     }
     
     @IBAction func signIn(_ sender: Any) {

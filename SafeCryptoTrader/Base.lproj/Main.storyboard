@@ -43,12 +43,21 @@
                                     <constraint firstItem="T0w-Sy-fAW" firstAttribute="height" secondItem="pA2-cm-wKa" secondAttribute="height" id="wy5-Xu-3dW"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btc_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-Of-iY0">
+                                <rect key="frame" x="87" y="188" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JAP-44-PHp"/>
+                                    <constraint firstAttribute="width" constant="240" id="eWA-XY-DU0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjg-la-0Vq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0Va-RW-SQO" firstAttribute="leading" secondItem="bjg-la-0Vq" secondAttribute="leading" constant="40" id="5yw-ED-NgF"/>
                             <constraint firstItem="bjg-la-0Vq" firstAttribute="trailing" secondItem="0Va-RW-SQO" secondAttribute="trailing" constant="40" id="AMJ-Oy-KnZ"/>
+                            <constraint firstItem="Ttp-Of-iY0" firstAttribute="centerX" secondItem="IQS-J0-WmG" secondAttribute="centerX" id="EHx-dq-pQM"/>
+                            <constraint firstItem="Ttp-Of-iY0" firstAttribute="top" secondItem="bjg-la-0Vq" secondAttribute="top" constant="100" id="dWV-2Q-d1C"/>
                             <constraint firstItem="bjg-la-0Vq" firstAttribute="bottom" secondItem="0Va-RW-SQO" secondAttribute="bottom" constant="40" id="gyl-vG-nhO"/>
                         </constraints>
                     </view>
@@ -130,7 +139,7 @@
         <!--Home View Controller-->
         <scene sceneID="lXu-03-5X6">
             <objects>
-                <viewController id="i8g-6e-ZQD" customClass="HomeViewController" customModule="SafeCryptoTrader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="i8g-6e-ZQD" customClass="HomeViewController" customModule="SafeCryptoTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R21-hz-KTF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btc_logo" width="1000" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

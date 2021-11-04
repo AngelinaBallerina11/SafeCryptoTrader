@@ -15,7 +15,7 @@ class StartupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.styleFilledButton(signUpButton)
-        Utilities.styleHollowButton(signInButton)
+        UIHelper.styleFilledButton(signUpButton)
+        UIHelper.styleHollowButton(signInButton)
     }
 }

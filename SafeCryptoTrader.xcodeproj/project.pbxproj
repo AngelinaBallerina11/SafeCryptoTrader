@@ -16,13 +16,14 @@
 		9E36AFC32733FAFA002FD709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFC12733FAFA002FD709 /* LaunchScreen.storyboard */; };
 		9E36AFCD2733FC9F002FD709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E36AFCC2733FC9F002FD709 /* GoogleService-Info.plist */; };
 		9E36AFD227342040002FD709 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD127342040002FD709 /* LoginViewController.swift */; };
-		9E36AFD42734262C002FD709 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD32734262C002FD709 /* Validator.swift */; };
 		9E36AFD6273426F2002FD709 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD5273426F2002FD709 /* Alerts.swift */; };
 		9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD72734286D002FD709 /* SignUpViewController.swift */; };
 		9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDA273428A3002FD709 /* HomeViewController.swift */; };
 		9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDC27342C45002FD709 /* StartupViewController.swift */; };
-		9E36AFDF273433C6002FD709 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDE273433C6002FD709 /* Utilities.swift */; };
+		9E36AFDF273433C6002FD709 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDE273433C6002FD709 /* UIHelper.swift */; };
 		9E36AFE12734340B002FD709 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE02734340B002FD709 /* Constants.swift */; };
+		9E36AFE327344DF1002FD709 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE227344DF1002FD709 /* UserRepository.swift */; };
+		9E36AFE52734509D002FD709 /* FormHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE42734509D002FD709 /* FormHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +37,14 @@
 		9E36AFC42733FAFA002FD709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E36AFCC2733FC9F002FD709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E36AFD127342040002FD709 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9E36AFD32734262C002FD709 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		9E36AFD5273426F2002FD709 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		9E36AFD72734286D002FD709 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9E36AFDA273428A3002FD709 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9E36AFDC27342C45002FD709 /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
-		9E36AFDE273433C6002FD709 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Utilities.swift; sourceTree = "<group>"; };
+		9E36AFDE273433C6002FD709 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelper.swift; path = ../../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/UIHelper.swift; sourceTree = "<group>"; };
 		9E36AFE02734340B002FD709 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Constants.swift; sourceTree = "<group>"; };
+		9E36AFE227344DF1002FD709 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9E36AFE42734509D002FD709 /* FormHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHelper.swift; sourceTree = "<group>"; };
 		B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.release.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.release.xcconfig"; sourceTree = "<group>"; };
 		D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.debug.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeCryptoTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +118,7 @@
 		9E36AFCE2734201D002FD709 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9E36AFD32734262C002FD709 /* Validator.swift */,
+				9E36AFE227344DF1002FD709 /* UserRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,9 +145,10 @@
 		9E36AFD92734288E002FD709 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9E36AFDE273433C6002FD709 /* Utilities.swift */,
+				9E36AFDE273433C6002FD709 /* UIHelper.swift */,
 				9E36AFE02734340B002FD709 /* Constants.swift */,
 				9E36AFD5273426F2002FD709 /* Alerts.swift */,
+				9E36AFE42734509D002FD709 /* FormHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -266,16 +269,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E36AFE52734509D002FD709 /* FormHelper.swift in Sources */,
 				9E36AFB42733FAF9002FD709 /* AppDelegate.swift in Sources */,
 				9E36AFE12734340B002FD709 /* Constants.swift in Sources */,
+				9E36AFE327344DF1002FD709 /* UserRepository.swift in Sources */,
 				9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */,
 				9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */,
 				9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */,
 				9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */,
-				9E36AFD42734262C002FD709 /* Validator.swift in Sources */,
 				9E36AFD227342040002FD709 /* LoginViewController.swift in Sources */,
 				9E36AFD6273426F2002FD709 /* Alerts.swift in Sources */,
-				9E36AFDF273433C6002FD709 /* Utilities.swift in Sources */,
+				9E36AFDF273433C6002FD709 /* UIHelper.swift in Sources */,
 				9E36AFBE2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
