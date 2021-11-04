@@ -25,11 +25,11 @@ class SignUpViewController: UIViewController {
     
     func setUpElements() {
         clearError()
-        UIHelper.styleTextField(firstNameTextField)
-        UIHelper.styleTextField(lastNameTextField)
-        UIHelper.styleTextField(emailTextField)
-        UIHelper.styleTextField(passwordTextField)
-        UIHelper.styleFilledButton(signUp)
+        UiHelper.styleTextField(firstNameTextField)
+        UiHelper.styleTextField(lastNameTextField)
+        UiHelper.styleTextField(emailTextField)
+        UiHelper.styleTextField(passwordTextField)
+        UiHelper.styleFilledButton(signUp)
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {

@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import UIKit
 
 class UserRepository {
     
@@ -68,6 +69,28 @@ class UserRepository {
         } catch let signOutError as NSError {
             completion(signOutError)
             print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    class func getUserInfo(completion: @escaping (User?, Error?) -> Void) {
+        if let currentUser = Auth.auth().currentUser {
+            Firestore.firestore()
+                .collection(FirestoreConstant.usersCollection)
+                .whereField(FirestoreConstant.userIdField, isEqualTo: currentUser.uid)
+                .addSnapshotListener { documentSnapshot, error in
+                    guard let document = documentSnapshot else {
+                        print("Error fetching document: \(error!)")
+                        completion(nil, error)
+                        return
+                    }
+                    let data = document.documents.map { querySnapshot -> User in
+                        let data = querySnapshot.data()
+                        let firstName = data[FirestoreConstant.userFirstNameField] as? String ?? "N/A"
+                        let lastName = data[FirestoreConstant.userLastNameField] as? String ?? "N/A"
+                        return User(firstName: firstName, lastName: lastName, email: currentUser.email!, memberSince: currentUser.metadata.creationDate!)
+                    }
+                    completion(data.first, nil)
+                }
         }
     }
 }

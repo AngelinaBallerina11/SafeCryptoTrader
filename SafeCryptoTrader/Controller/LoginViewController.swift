@@ -20,9 +20,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         clearError()
-        UIHelper.styleTextField(emailTextField)
-        UIHelper.styleTextField(passwordTextField)
-        UIHelper.styleFilledButton(signInButton)
+        UiHelper.styleTextField(emailTextField)
+        UiHelper.styleTextField(passwordTextField)
+        UiHelper.styleFilledButton(signInButton)
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {

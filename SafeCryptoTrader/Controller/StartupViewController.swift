@@ -16,8 +16,8 @@ class StartupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIHelper.styleFilledButton(signUpButton)
-        UIHelper.styleHollowButton(signInButton)
+        UiHelper.styleFilledButton(signUpButton)
+        UiHelper.styleHollowButton(signInButton)
         if let currentUser = Auth.auth().currentUser {
             performSegue(withIdentifier: "showHomeScreen", sender: nil)
         }

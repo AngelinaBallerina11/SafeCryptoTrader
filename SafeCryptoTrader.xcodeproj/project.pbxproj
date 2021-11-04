@@ -20,10 +20,14 @@
 		9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFD72734286D002FD709 /* SignUpViewController.swift */; };
 		9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDA273428A3002FD709 /* HomeViewController.swift */; };
 		9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDC27342C45002FD709 /* StartupViewController.swift */; };
-		9E36AFDF273433C6002FD709 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFDE273433C6002FD709 /* UIHelper.swift */; };
-		9E36AFE12734340B002FD709 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE02734340B002FD709 /* Constants.swift */; };
 		9E36AFE327344DF1002FD709 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE227344DF1002FD709 /* UserRepository.swift */; };
 		9E36AFE52734509D002FD709 /* FormHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE42734509D002FD709 /* FormHelper.swift */; };
+		9E36AFE727346321002FD709 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE627346321002FD709 /* TabBarController.swift */; };
+		9E36AFE927346C7A002FD709 /* UiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFE827346C7A002FD709 /* UiHelper.swift */; };
+		9E36AFEB27346CDF002FD709 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFEA27346CDF002FD709 /* Constants.swift */; };
+		9E36AFED27346E2B002FD709 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFEC27346E2B002FD709 /* ExchangeViewController.swift */; };
+		9E36AFEF27346E58002FD709 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFEE27346E58002FD709 /* ProfileViewController.swift */; };
+		9E36AFF127347419002FD709 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFF027347419002FD709 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +45,14 @@
 		9E36AFD72734286D002FD709 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9E36AFDA273428A3002FD709 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9E36AFDC27342C45002FD709 /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
-		9E36AFDE273433C6002FD709 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelper.swift; path = ../../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/UIHelper.swift; sourceTree = "<group>"; };
-		9E36AFE02734340B002FD709 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Constants.swift; sourceTree = "<group>"; };
 		9E36AFE227344DF1002FD709 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9E36AFE42734509D002FD709 /* FormHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHelper.swift; sourceTree = "<group>"; };
+		9E36AFE627346321002FD709 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9E36AFE827346C7A002FD709 /* UiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiHelper.swift; sourceTree = "<group>"; };
+		9E36AFEA27346CDF002FD709 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9E36AFEC27346E2B002FD709 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		9E36AFEE27346E58002FD709 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9E36AFF027347419002FD709 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.release.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.release.xcconfig"; sourceTree = "<group>"; };
 		D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.debug.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeCryptoTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9E36AFE227344DF1002FD709 /* UserRepository.swift */,
+				9E36AFF027347419002FD709 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +147,9 @@
 				9E36AFD72734286D002FD709 /* SignUpViewController.swift */,
 				9E36AFDA273428A3002FD709 /* HomeViewController.swift */,
 				9E36AFDC27342C45002FD709 /* StartupViewController.swift */,
+				9E36AFE627346321002FD709 /* TabBarController.swift */,
+				9E36AFEC27346E2B002FD709 /* ExchangeViewController.swift */,
+				9E36AFEE27346E58002FD709 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,10 +157,10 @@
 		9E36AFD92734288E002FD709 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9E36AFDE273433C6002FD709 /* UIHelper.swift */,
-				9E36AFE02734340B002FD709 /* Constants.swift */,
 				9E36AFD5273426F2002FD709 /* Alerts.swift */,
 				9E36AFE42734509D002FD709 /* FormHelper.swift */,
+				9E36AFE827346C7A002FD709 /* UiHelper.swift */,
+				9E36AFEA27346CDF002FD709 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,16 +282,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E36AFE52734509D002FD709 /* FormHelper.swift in Sources */,
+				9E36AFE727346321002FD709 /* TabBarController.swift in Sources */,
 				9E36AFB42733FAF9002FD709 /* AppDelegate.swift in Sources */,
-				9E36AFE12734340B002FD709 /* Constants.swift in Sources */,
 				9E36AFE327344DF1002FD709 /* UserRepository.swift in Sources */,
+				9E36AFF127347419002FD709 /* User.swift in Sources */,
 				9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */,
 				9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */,
 				9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */,
+				9E36AFEB27346CDF002FD709 /* Constants.swift in Sources */,
 				9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */,
+				9E36AFED27346E2B002FD709 /* ExchangeViewController.swift in Sources */,
+				9E36AFE927346C7A002FD709 /* UiHelper.swift in Sources */,
 				9E36AFD227342040002FD709 /* LoginViewController.swift in Sources */,
+				9E36AFEF27346E58002FD709 /* ProfileViewController.swift in Sources */,
 				9E36AFD6273426F2002FD709 /* Alerts.swift in Sources */,
-				9E36AFDF273433C6002FD709 /* UIHelper.swift in Sources */,
 				9E36AFBE2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
