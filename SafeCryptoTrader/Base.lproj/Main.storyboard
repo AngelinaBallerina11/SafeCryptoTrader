@@ -167,23 +167,23 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xB2-n9-cx8">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EtX-xZ-GU9">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AH-VV-bWN">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Pc-69-uSr">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kae-72-DLs" userLabel="Sign Up Button">
                                         <rect key="frame" x="0.0" y="280" width="334" height="50"/>
@@ -192,8 +192,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="onSignUpTapped:" destination="dQ5-74-eD1" eventType="touchUpInside" id="3uc-9s-qYV"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbh-yz-beY" userLabel="Error Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbh-yz-beY" userLabel="Error Label">
                                         <rect key="frame" x="0.0" y="350" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -207,11 +210,16 @@
                                     <constraint firstItem="EtX-xZ-GU9" firstAttribute="height" secondItem="xB2-n9-cx8" secondAttribute="height" id="vkn-Mu-eFf"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LXf-yg-8vB">
+                                <rect key="frame" x="197" y="538.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="djd-IZ-Ynq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LXf-yg-8vB" firstAttribute="centerX" secondItem="jSe-mg-2GI" secondAttribute="centerX" id="7L2-iq-zbT"/>
                             <constraint firstItem="FWH-7c-Oo9" firstAttribute="top" secondItem="djd-IZ-Ynq" secondAttribute="top" constant="40" id="BvA-ZI-3ke"/>
+                            <constraint firstItem="LXf-yg-8vB" firstAttribute="top" secondItem="FWH-7c-Oo9" secondAttribute="bottom" constant="40" id="R4S-3Q-zYE"/>
                             <constraint firstItem="djd-IZ-Ynq" firstAttribute="trailing" secondItem="FWH-7c-Oo9" secondAttribute="trailing" constant="40" id="hpW-H8-dsn"/>
                             <constraint firstItem="FWH-7c-Oo9" firstAttribute="leading" secondItem="djd-IZ-Ynq" secondAttribute="leading" constant="40" id="ouw-O3-d5j"/>
                         </constraints>
@@ -222,6 +230,7 @@
                         <outlet property="errorLabel" destination="gbh-yz-beY" id="019-8d-J3L"/>
                         <outlet property="firstNameTextField" destination="xB2-n9-cx8" id="nBK-KG-DJL"/>
                         <outlet property="lastNameTextField" destination="EtX-xZ-GU9" id="pUY-Nn-rMz"/>
+                        <outlet property="loadingIndicator" destination="LXf-yg-8vB" id="Frh-Jn-X4f"/>
                         <outlet property="passwordTextField" destination="9Pc-69-uSr" id="JJh-xS-p2g"/>
                         <outlet property="signUp" destination="kae-72-DLs" id="hBh-LE-iQb"/>
                     </connections>
