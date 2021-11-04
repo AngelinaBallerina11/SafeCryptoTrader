@@ -59,4 +59,15 @@ class UserRepository {
             }
         }
     }
+    
+    class func logout(completion: @escaping (Error?) -> Void) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            completion(nil)
+        } catch let signOutError as NSError {
+            completion(signOutError)
+            print("Error signing out: %@", signOutError)
+        }
+    }
 }

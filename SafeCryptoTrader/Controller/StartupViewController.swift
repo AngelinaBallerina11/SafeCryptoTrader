@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class StartupViewController: UIViewController {
     
@@ -17,5 +18,8 @@ class StartupViewController: UIViewController {
         super.viewDidLoad()
         UIHelper.styleFilledButton(signUpButton)
         UIHelper.styleHollowButton(signInButton)
+        if let currentUser = Auth.auth().currentUser {
+            performSegue(withIdentifier: "showHomeScreen", sender: nil)
+        }
     }
 }
