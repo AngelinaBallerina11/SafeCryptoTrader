@@ -44,9 +44,12 @@ class SignUpViewController: UIViewController {
             lastName: lastNameTextField.text!.trim(),
             userName: emailTextField.text!.trim(),
             password: passwordTextField.text!.trim()) { success, error in
+                self.showLoading(false)
                 if let error = error {
                     self.showError(error.localizedDescription)
-                } else {
+                    return
+                }
+                if success {
                     self.transitionToHomeScreen()
                 }
             }

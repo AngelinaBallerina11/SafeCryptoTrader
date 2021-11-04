@@ -45,4 +45,18 @@ class UserRepository {
             }
         }
     }
+    
+    class func signIn(
+        email: String,
+        password: String,
+        completion: @escaping (Bool, Error?) -> Void
+    ) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(false, error)
+            } else {
+                completion(true, nil)
+            }
+        }
+    }
 }
