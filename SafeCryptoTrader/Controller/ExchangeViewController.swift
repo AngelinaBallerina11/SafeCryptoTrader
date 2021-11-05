@@ -35,9 +35,9 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
     }
     
     fileprivate func setUpBtcFetchResultsController() {
-        let request = Bitcoin.fetchRequest()
+        //let request = Bitcoin.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
-        request.sortDescriptors = [sortDescriptor]
+      //  request.sortDescriptors = [sortDescriptor]
 //        btcFetchedResultsController = NSFetchedResultsController(
 //            fetchRequest: request,
 //            managedObjectContext: persistentContainer.viewContext,

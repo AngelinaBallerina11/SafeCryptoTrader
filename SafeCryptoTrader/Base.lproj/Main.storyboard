@@ -189,44 +189,124 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFX-LV-vIx" userLabel="BTC price Label">
-                                <rect key="frame" x="287.5" y="128" width="86.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="295" y="128" width="79" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujx-5e-Wik" userLabel="BTC price">
-                                <rect key="frame" x="357" y="160" width="17" height="29"/>
+                                <rect key="frame" x="357" y="157.5" width="17" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tif-sw-woH" userLabel="Daily change value">
-                                <rect key="frame" x="364" y="197" width="10" height="18"/>
+                                <rect key="frame" x="364" y="191.5" width="10" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EpF-Fd-e5i" userLabel="Balance">
+                                <rect key="frame" x="50" y="269.5" width="314" height="133.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eN-Ew-QD8">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-tB-spP">
+                                        <rect key="frame" x="0.0" y="33.5" width="314" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-eL-Dao">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cash-1x" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-dq-qUn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="1KU-63-3lk"/>
+                                                            <constraint firstAttribute="width" constant="40" id="pCn-2y-FVO"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9x-gm-4E6" userLabel="USD">
+                                                        <rect key="frame" x="50" y="0.0" width="92" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zas-fn-dv8" userLabel="Amount">
+                                                        <rect key="frame" x="152" y="0.0" width="162" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fip-JI-CVh">
+                                                <rect key="frame" x="0.0" y="60" width="314" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin-1x" translatesAutoresizingMaskIntoConstraints="NO" id="2sT-kq-iZu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="7Nv-1j-End"/>
+                                                            <constraint firstAttribute="width" constant="40" id="azx-dj-RFL"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dd-iS-bQX">
+                                                        <rect key="frame" x="50" y="0.0" width="88.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s80-1b-SIe" userLabel="Amount">
+                                                        <rect key="frame" x="148.5" y="0.0" width="165.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shn-GM-1og" userLabel="Top up">
+                                <rect key="frame" x="173" y="443" width="68.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Top up"/>
+                                <connections>
+                                    <action selector="onTopUpTapped:" destination="cAl-Za-10M" eventType="touchUpInside" id="NQy-xK-eHD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fRi-x9-KP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="EpF-Fd-e5i" secondAttribute="trailing" constant="50" id="Gbd-42-Flf"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="ujx-5e-Wik" secondAttribute="trailing" constant="40" id="IMn-pj-KNX"/>
+                            <constraint firstItem="EpF-Fd-e5i" firstAttribute="top" secondItem="tif-sw-woH" secondAttribute="bottom" constant="60" id="JG0-zS-Wdm"/>
+                            <constraint firstItem="Shn-GM-1og" firstAttribute="centerX" secondItem="n3Z-W6-ALB" secondAttribute="centerX" id="Wgn-nU-ulT"/>
                             <constraint firstItem="ujx-5e-Wik" firstAttribute="top" secondItem="MFX-LV-vIx" secondAttribute="bottom" constant="8" symbolic="YES" id="Zeg-rg-Arm"/>
+                            <constraint firstItem="Shn-GM-1og" firstAttribute="top" secondItem="EpF-Fd-e5i" secondAttribute="bottom" constant="40" id="cB6-oR-fX3"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="tif-sw-woH" secondAttribute="trailing" constant="40" id="d1w-gk-TU2"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="MFX-LV-vIx" secondAttribute="trailing" constant="40" id="hv6-jQ-lNP"/>
-                            <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="8" symbolic="YES" id="mcH-pn-FSs"/>
+                            <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="5" id="mcH-pn-FSs"/>
                             <constraint firstItem="MFX-LV-vIx" firstAttribute="top" secondItem="fRi-x9-KP5" secondAttribute="top" constant="40" id="owf-7g-9CR"/>
+                            <constraint firstItem="EpF-Fd-e5i" firstAttribute="leading" secondItem="fRi-x9-KP5" secondAttribute="leading" constant="50" id="tkt-id-Z7H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-iy-4iA"/>
                     <connections>
+                        <outlet property="balanceGroup" destination="EpF-Fd-e5i" id="Lpw-R9-POV"/>
+                        <outlet property="btcAmount" destination="s80-1b-SIe" id="RWO-0S-Yle"/>
                         <outlet property="btcDailyChange" destination="tif-sw-woH" id="rmN-iN-Ojz"/>
                         <outlet property="btcPrice" destination="ujx-5e-Wik" id="JEb-Ab-Eg2"/>
+                        <outlet property="usdAmount" destination="zas-fn-dv8" id="khz-GB-DrZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2T-mW-xyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5171" y="-346"/>
+            <point key="canvasLocation" x="5169.5652173913049" y="-346.20535714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4fO-Do-b1F">
@@ -504,7 +584,9 @@
     </scenes>
     <resources>
         <image name="account" width="32" height="32"/>
+        <image name="bitcoin-1x" width="29" height="29"/>
         <image name="btc_logo" width="1000" height="1000"/>
+        <image name="cash-1x" width="29" height="29"/>
         <image name="money" width="32" height="32"/>
         <image name="wallet" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
