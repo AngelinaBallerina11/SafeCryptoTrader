@@ -389,18 +389,30 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsb-kV-0wJ">
+                                <rect key="frame" x="40" y="336.5" width="334" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Exchange"/>
+                                <connections>
+                                    <action selector="onExchnageTapped:" destination="TbZ-9R-vPT" eventType="touchUpInside" id="z6l-9G-GXe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Loz-ia-nnU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Lsb-kV-0wJ" firstAttribute="leading" secondItem="Loz-ia-nnU" secondAttribute="leading" constant="40" id="CHk-k0-9pu"/>
+                            <constraint firstItem="Loz-ia-nnU" firstAttribute="trailing" secondItem="Lsb-kV-0wJ" secondAttribute="trailing" constant="40" id="Mcl-jm-knB"/>
                             <constraint firstItem="RQg-zW-x4W" firstAttribute="top" secondItem="ExU-xQ-NXP" secondAttribute="top" constant="90" id="gnS-KK-SQ5"/>
                             <constraint firstItem="Loz-ia-nnU" firstAttribute="trailing" secondItem="RQg-zW-x4W" secondAttribute="trailing" constant="40" id="ngg-91-DF9"/>
+                            <constraint firstItem="Lsb-kV-0wJ" firstAttribute="top" secondItem="RQg-zW-x4W" secondAttribute="bottom" constant="40" id="pec-Rs-SxT"/>
                             <constraint firstItem="RQg-zW-x4W" firstAttribute="leading" secondItem="Loz-ia-nnU" secondAttribute="leading" constant="40" id="uNr-w9-95A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PNq-AB-sCK"/>
                     <connections>
                         <outlet property="errorLabel" destination="0OH-Ab-Hrv" id="Gf3-Oi-njM"/>
+                        <outlet property="exchangeButton" destination="Lsb-kV-0wJ" id="N2n-Gz-c2A"/>
                         <outlet property="fromAmount" destination="qhi-oN-LlP" id="qSS-8x-VG0"/>
                         <outlet property="fromCurrency" destination="zJY-Jd-eV2" id="KJw-3R-sOO"/>
                         <outlet property="toAmount" destination="cGy-iu-nni" id="mBV-zF-0wn"/>
@@ -409,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg8-5m-KvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5172" y="335"/>
+            <point key="canvasLocation" x="5171.0144927536239" y="334.82142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C9j-Gm-k8U">

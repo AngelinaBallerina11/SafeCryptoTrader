@@ -16,6 +16,7 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
     @IBOutlet weak var toCurrency: UILabel!
     @IBOutlet weak var toAmount: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var exchangeButton: UIButton!
     
     var persistentContainer: NSPersistentContainer!
     var accountFetchedResultsController: NSFetchedResultsController<Account>!
@@ -80,6 +81,14 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         }
     }
     
+    @IBAction func onExchnageTapped(_ sender: Any) {
+        let account = state.account
+        if state.fromCurrency is Dollar {
+            account!.usd -= state.fromCurrency.amount
+            try? persistentContainer.viewContext.save()
+        }
+    }
+    
     fileprivate func startTimer() {
         Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
@@ -99,6 +108,7 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         if toAmount.text != state.toCurrency.format() && (state.toCurrency.exceededAllowedNumOfDecimalPlaces(toAmount.text!) || !state.fromUserAction) {
             toAmount.text = state.toCurrency.format()
         }
+        exchangeButton.isEnabled = state.error == nil
     }
     
     fileprivate func setUpPersistence() {
@@ -189,7 +199,7 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
                 toCurrency: self.fromCurrency,
                 account: self.account,
                 currentBtcPrice: self.currentBtcPrice,
-                error: self.error,
+                error: checkError(self.toCurrency),
                 fromUserAction: false
             )
         }
@@ -205,23 +215,26 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
             )
         }
         
-        func updateFromAmount(_ amount: Double) -> State {
-            // check balance
-            var error = self.error
+        func checkError(_ currency: Currency) -> String? {
             if let account = self.account {
-                if self.fromCurrency is Dollar && account.usd < amount ||
-                    self.fromCurrency is Bitcoin && account.btc < amount {
-                    error = "Insufficient balance"
+                if currency is Dollar && account.usd < currency.amount ||
+                    currency is Bitcoin && account.btc < currency.amount {
+                    return "Insufficient balance"
                 } else {
-                    error = nil
+                    return nil
                 }
+            } else {
+                return nil
             }
+        }
+        
+        func updateFromAmount(_ amount: Double) -> State {
             return State(
                 fromCurrency: self.fromCurrency.updateAmount(amount),
                 toCurrency: self.toCurrency,
                 account: self.account,
                 currentBtcPrice: self.currentBtcPrice,
-                error: error,
+                error: checkError(self.fromCurrency),
                 fromUserAction: true
             )
         }
