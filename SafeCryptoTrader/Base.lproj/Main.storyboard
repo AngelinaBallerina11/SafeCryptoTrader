@@ -278,6 +278,14 @@
                                     <action selector="onTopUpTapped:" destination="cAl-Za-10M" eventType="touchUpInside" id="NQy-xK-eHD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfr-7H-p0p" userLabel="Reload">
+                                <rect key="frame" x="313" y="156.5" width="44" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.counterclockwise.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="onReloadTapped:" destination="cAl-Za-10M" eventType="touchUpInside" id="Jtm-3h-81G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fRi-x9-KP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -285,6 +293,7 @@
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="EpF-Fd-e5i" secondAttribute="trailing" constant="50" id="Gbd-42-Flf"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="ujx-5e-Wik" secondAttribute="trailing" constant="40" id="IMn-pj-KNX"/>
                             <constraint firstItem="EpF-Fd-e5i" firstAttribute="top" secondItem="tif-sw-woH" secondAttribute="bottom" constant="60" id="JG0-zS-Wdm"/>
+                            <constraint firstItem="ujx-5e-Wik" firstAttribute="leading" secondItem="Xfr-7H-p0p" secondAttribute="trailing" id="Shg-Bd-c17"/>
                             <constraint firstItem="Shn-GM-1og" firstAttribute="centerX" secondItem="n3Z-W6-ALB" secondAttribute="centerX" id="Wgn-nU-ulT"/>
                             <constraint firstItem="ujx-5e-Wik" firstAttribute="top" secondItem="MFX-LV-vIx" secondAttribute="bottom" constant="8" symbolic="YES" id="Zeg-rg-Arm"/>
                             <constraint firstItem="Shn-GM-1og" firstAttribute="top" secondItem="EpF-Fd-e5i" secondAttribute="bottom" constant="40" id="cB6-oR-fX3"/>
@@ -292,6 +301,7 @@
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="MFX-LV-vIx" secondAttribute="trailing" constant="40" id="hv6-jQ-lNP"/>
                             <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="5" id="mcH-pn-FSs"/>
                             <constraint firstItem="MFX-LV-vIx" firstAttribute="top" secondItem="fRi-x9-KP5" secondAttribute="top" constant="40" id="owf-7g-9CR"/>
+                            <constraint firstItem="Xfr-7H-p0p" firstAttribute="centerY" secondItem="ujx-5e-Wik" secondAttribute="centerY" id="rI1-th-JoS"/>
                             <constraint firstItem="EpF-Fd-e5i" firstAttribute="leading" secondItem="fRi-x9-KP5" secondAttribute="leading" constant="50" id="tkt-id-Z7H"/>
                         </constraints>
                     </view>
@@ -584,6 +594,7 @@
     </scenes>
     <resources>
         <image name="account" width="32" height="32"/>
+        <image name="arrow.counterclockwise.circle" catalog="system" width="128" height="121"/>
         <image name="bitcoin-1x" width="29" height="29"/>
         <image name="btc_logo" width="1000" height="1000"/>
         <image name="cash-1x" width="29" height="29"/>

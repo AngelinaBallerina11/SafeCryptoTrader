@@ -25,7 +25,7 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         setUpPersistence()
         fetchBitcoinPrice()
-        Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 120.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         balanceGroup.addBackground(color: .gray)
     }
     
@@ -40,6 +40,10 @@ class HomeViewController : UIViewController {
         }
         try? persistentContainer.viewContext.save()
         fetchAccount()
+    }
+    
+    @IBAction func onReloadTapped(_ sender: Any) {
+        fetchBitcoinPrice()
     }
     
     fileprivate func fetchAccount() {
