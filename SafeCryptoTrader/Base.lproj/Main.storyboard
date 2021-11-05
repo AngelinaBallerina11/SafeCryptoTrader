@@ -342,10 +342,70 @@
                     <view key="view" contentMode="scaleToFill" id="ExU-xQ-NXP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RQg-zW-x4W">
+                                <rect key="frame" x="40" y="90" width="334" height="206.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJY-Jd-eV2" userLabel="From currency label">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZGb-eh-V33">
+                                        <rect key="frame" x="0.0" y="36.5" width="334" height="48.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qhi-oN-LlP" userLabel="From text field">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OH-Ab-Hrv" userLabel="error label">
+                                                <rect key="frame" x="0.0" y="34" width="334" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miT-oC-V6u">
+                                        <rect key="frame" x="0.0" y="95" width="334" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="onSwapCurrencyTapped:" destination="TbZ-9R-vPT" eventType="touchUpInside" id="aU0-aS-LFo"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYe-NZ-RlT" userLabel="To currency label">
+                                        <rect key="frame" x="0.0" y="136" width="334" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-iu-nni" userLabel="To text field">
+                                        <rect key="frame" x="0.0" y="172.5" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Loz-ia-nnU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RQg-zW-x4W" firstAttribute="top" secondItem="ExU-xQ-NXP" secondAttribute="top" constant="90" id="gnS-KK-SQ5"/>
+                            <constraint firstItem="Loz-ia-nnU" firstAttribute="trailing" secondItem="RQg-zW-x4W" secondAttribute="trailing" constant="40" id="ngg-91-DF9"/>
+                            <constraint firstItem="RQg-zW-x4W" firstAttribute="leading" secondItem="Loz-ia-nnU" secondAttribute="leading" constant="40" id="uNr-w9-95A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PNq-AB-sCK"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="0OH-Ab-Hrv" id="Gf3-Oi-njM"/>
+                        <outlet property="fromAmount" destination="qhi-oN-LlP" id="qSS-8x-VG0"/>
+                        <outlet property="fromCurrency" destination="zJY-Jd-eV2" id="KJw-3R-sOO"/>
+                        <outlet property="toAmount" destination="cGy-iu-nni" id="mBV-zF-0wn"/>
+                        <outlet property="toCurrency" destination="LYe-NZ-RlT" id="Ofn-H6-EpD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg8-5m-KvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -595,6 +655,7 @@
     <resources>
         <image name="account" width="32" height="32"/>
         <image name="arrow.counterclockwise.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.up.arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="bitcoin-1x" width="29" height="29"/>
         <image name="btc_logo" width="1000" height="1000"/>
         <image name="cash-1x" width="29" height="29"/>

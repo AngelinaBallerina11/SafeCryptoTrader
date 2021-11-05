@@ -54,3 +54,14 @@ class UiHelper {
         button.tintColor = colorPrimary
     }
 }
+
+extension UIStackView {
+    func addBackground(color: UIColor) {
+        let subView = UIView(frame: bounds)
+        subView.frame = CGRect(x: -15.0, y: -15.0, width: subView.frame.width+30.0, height: subView.frame.height + 30.0)
+        subView.backgroundColor = #colorLiteral(red: 0.9182365145, green: 0.9180737242, blue: 0.9334556503, alpha: 1)
+        subView.layer.cornerRadius = 20.0
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
+    }
+}

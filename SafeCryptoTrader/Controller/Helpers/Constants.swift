@@ -15,4 +15,9 @@ struct Constants {
         static let tabBarViewController = "TabBarVC"
     }
     
+    struct Currencies {
+        static let USD = "USD"
+        static let BTC = "BTC"
+    }
+    
 }

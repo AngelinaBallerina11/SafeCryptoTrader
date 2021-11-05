@@ -25,7 +25,7 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         setUpPersistence()
         fetchBitcoinPrice()
-        Timer.scheduledTimer(timeInterval: 120.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        startTimer()
         balanceGroup.addBackground(color: .gray)
     }
     
@@ -46,6 +46,10 @@ class HomeViewController : UIViewController {
         fetchBitcoinPrice()
     }
     
+    fileprivate func startTimer() {
+        Timer.scheduledTimer(timeInterval: 120.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    }
+    
     fileprivate func fetchAccount() {
         let request = Account.fetchRequest()
         request.fetchLimit = 1
@@ -55,8 +59,8 @@ class HomeViewController : UIViewController {
                 addEmptyAccount()
             }
             if let account = result.first {
-                usdAmount.text = String(format: "%.2f", account.usd)
-                btcPrice.text = String(format: "%.2f", account.btc)
+                usdAmount.text = account.usd.to2dp()
+                btcAmount.text = account.btc.to2dp()
                 self.account = account
             }
         } catch {
@@ -87,7 +91,7 @@ class HomeViewController : UIViewController {
         } else {
             self.btcDailyChange.textColor = .red
         }
-        self.btcDailyChange.text = prefix + String(format: "%.2f", btc.dailyChange)
+        self.btcDailyChange.text = prefix + btc.dailyChange.to2dp()
     }
     
     fileprivate func fetchBitcoinPrice() {
@@ -97,22 +101,11 @@ class HomeViewController : UIViewController {
                 return
             }
             if let btc = price {
-                self.btcPrice.text = String(format: "%.2f", btc.usd)
+                self.btcPrice.text = btc.usd.to2dp()
                 self.formatBtcDailyChange(btc)
             }
         }
     }
     
     
-}
-
-extension UIStackView {
-    func addBackground(color: UIColor) {
-        let subView = UIView(frame: bounds)
-        subView.frame = CGRect(x: -15.0, y: -15.0, width: subView.frame.width+30.0, height: subView.frame.height + 30.0)
-        subView.backgroundColor = #colorLiteral(red: 0.9182365145, green: 0.9180737242, blue: 0.9334556503, alpha: 1)
-        subView.layer.cornerRadius = 20.0
-        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        insertSubview(subView, at: 0)
-    }
 }
