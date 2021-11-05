@@ -13,6 +13,7 @@ struct Constants {
         
         static let homeViewController = "HomeVC"
         static let tabBarViewController = "TabBarVC"
+        static let cellId = "TransactionCell"
     }
     
     struct Currencies {

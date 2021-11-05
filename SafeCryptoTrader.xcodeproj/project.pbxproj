@@ -33,6 +33,8 @@
 		9E36AFF9273520EE002FD709 /* BitcoinPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFF8273520EE002FD709 /* BitcoinPrice.swift */; };
 		9E36AFFB27354B21002FD709 /* FormattingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFFA27354B21002FD709 /* FormattingHelper.swift */; };
 		9E36AFFD27356A7E002FD709 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFFC27356A7E002FD709 /* Currency.swift */; };
+		9E36AFFF27359454002FD709 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFFE27359454002FD709 /* TransactionTableViewCell.swift */; };
+		9E36B0012735989A002FD709 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36B0002735989A002FD709 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		9E36AFF8273520EE002FD709 /* BitcoinPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPrice.swift; sourceTree = "<group>"; };
 		9E36AFFA27354B21002FD709 /* FormattingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingHelper.swift; sourceTree = "<group>"; };
 		9E36AFFC27356A7E002FD709 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		9E36AFFE27359454002FD709 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		9E36B0002735989A002FD709 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.release.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.release.xcconfig"; sourceTree = "<group>"; };
 		D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.debug.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeCryptoTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,7 @@
 				9E36AFE627346321002FD709 /* TabBarController.swift */,
 				9E36AFEC27346E2B002FD709 /* ExchangeViewController.swift */,
 				9E36AFEE27346E58002FD709 /* ProfileViewController.swift */,
+				9E36AFFE27359454002FD709 /* TransactionTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				9E36AFE827346C7A002FD709 /* UiHelper.swift */,
 				9E36AFEA27346CDF002FD709 /* Constants.swift */,
 				9E36AFFA27354B21002FD709 /* FormattingHelper.swift */,
+				9E36B0002735989A002FD709 /* DateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -319,11 +325,13 @@
 				9E36AFE327344DF1002FD709 /* UserRepository.swift in Sources */,
 				9E36AFF327351F06002FD709 /* CryptoService.swift in Sources */,
 				9E36AFF127347419002FD709 /* User.swift in Sources */,
+				9E36B0012735989A002FD709 /* DateFormatter.swift in Sources */,
 				9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */,
 				9E36AFFB27354B21002FD709 /* FormattingHelper.swift in Sources */,
 				9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */,
 				9E36AFF9273520EE002FD709 /* BitcoinPrice.swift in Sources */,
 				9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */,
+				9E36AFFF27359454002FD709 /* TransactionTableViewCell.swift in Sources */,
 				9E36AFFD27356A7E002FD709 /* Currency.swift in Sources */,
 				9E36AFEB27346CDF002FD709 /* Constants.swift in Sources */,
 				9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */,

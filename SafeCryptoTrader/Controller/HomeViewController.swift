@@ -29,6 +29,11 @@ class HomeViewController : UIViewController {
         balanceGroup.addBackground(color: .gray)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchAccount()
+    }
+    
     @objc func fireTimer() {
         print("Timer fired!")
         fetchBitcoinPrice()
@@ -60,7 +65,7 @@ class HomeViewController : UIViewController {
             }
             if let account = result.first {
                 usdAmount.text = account.usd.to2dp()
-                btcAmount.text = account.btc.to2dp()
+                btcAmount.text = account.btc.to8dp()
                 self.account = account
             }
         } catch {
@@ -73,7 +78,6 @@ class HomeViewController : UIViewController {
         if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
             persistentContainer = sd.persistentContainer
         }
-        fetchAccount()
     }
     
     fileprivate func addEmptyAccount() {

@@ -27,15 +27,9 @@ class ProfileViewController: UIViewController {
                 self.firstNameLabel.text = user.firstName
                 self.lastNameLabel.text = user.lastName
                 self.emailLabel.text = user.email
-                self.memberSinceLabel.text = self.formatDate(user.memberSince)
+                self.memberSinceLabel.text = user.memberSince.formatDate()
             }
         }
-    }
-    
-    fileprivate func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        return dateFormatter.string(from: date)
     }
     
     @IBAction func onLogoutTapped(_ sender: Any) {

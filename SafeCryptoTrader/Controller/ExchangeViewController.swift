@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ExchangeViewController : UIViewController, NSFetchedResultsControllerDelegate {
+class ExchangeViewController : UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var fromCurrency: UILabel!
     @IBOutlet weak var fromAmount: UITextField!
@@ -17,9 +17,10 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
     @IBOutlet weak var toAmount: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var exchangeButton: UIButton!
+    @IBOutlet weak var transactionsTableView: UITableView!
     
     var persistentContainer: NSPersistentContainer!
-    var accountFetchedResultsController: NSFetchedResultsController<Account>!
+    var transactionFetchedResultsController: NSFetchedResultsController<Transaction>!
     
     var state: State!
     
@@ -31,7 +32,13 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         fetchBitcoinPrice()
         setUpTextFields()
         startTimer()
-        
+        transactionsTableView.dataSource = self
+        transactionsTableView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        transactionFetchedResultsController = nil
     }
     
     @objc func fireTimer() {
@@ -82,11 +89,34 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
     }
     
     @IBAction func onExchnageTapped(_ sender: Any) {
-        let account = state.account
-        if state.fromCurrency is Dollar {
-            account!.usd -= state.fromCurrency.amount
+        if let account = state.account {
+            let newTransaction = Transaction(context: persistentContainer.viewContext)
+            newTransaction.date = Date()
+            if state.fromCurrency is Dollar {
+                account.usd -= state.fromCurrency.amount
+                account.btc += state.toCurrency.amount
+                newTransaction.btcBuy = true
+                newTransaction.usdAmount = state.fromCurrency.amount
+                newTransaction.btcAmount = state.toCurrency.amount
+            } else {
+                account.btc -= state.fromCurrency.amount
+                account.usd += state.toCurrency.amount
+                newTransaction.btcBuy = false
+                newTransaction.usdAmount = state.toCurrency.amount
+                newTransaction.btcAmount = state.fromCurrency.amount
+            }
             try? persistentContainer.viewContext.save()
+            resetState()
+            showSuccessAlert()
+        } else {
+            showErrorAlert(message: "Failed to load the account data")
         }
+    }
+    
+    fileprivate func resetState() {
+        fromAmount.text = nil
+        toAmount.text = nil
+        state = state.resetAmounts()
     }
     
     fileprivate func startTimer() {
@@ -108,7 +138,7 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         if toAmount.text != state.toCurrency.format() && (state.toCurrency.exceededAllowedNumOfDecimalPlaces(toAmount.text!) || !state.fromUserAction) {
             toAmount.text = state.toCurrency.format()
         }
-        exchangeButton.isEnabled = state.error == nil
+        exchangeButton.isEnabled = state.error == nil && state.fromCurrency.amount > 0.0
     }
     
     fileprivate func setUpPersistence() {
@@ -116,7 +146,24 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
             persistentContainer = sd.persistentContainer
         }
+        setUpFetchedResultsController()
         fetchAccount()
+    }
+    
+    fileprivate func setUpFetchedResultsController() {
+        let request = Transaction.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        transactionFetchedResultsController = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: persistentContainer.viewContext,
+            sectionNameKeyPath: nil, cacheName: nil)
+        transactionFetchedResultsController.delegate = self
+        do {
+            try transactionFetchedResultsController.performFetch()
+        } catch {
+            fatalError("Fetch could not be performed: \(error.localizedDescription)")
+        }
     }
     
     fileprivate func fetchAccount() {
@@ -184,8 +231,8 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         
         static func getDefault() -> State {
             return State(
-                fromCurrency: Bitcoin(),
-                toCurrency: Dollar(),
+                fromCurrency: Dollar(),
+                toCurrency: Bitcoin(),
                 account: nil,
                 currentBtcPrice: 0.0,
                 error: nil,
@@ -229,12 +276,13 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         }
         
         func updateFromAmount(_ amount: Double) -> State {
+            let newFromCurrency = self.fromCurrency.updateAmount(amount)
             return State(
-                fromCurrency: self.fromCurrency.updateAmount(amount),
-                toCurrency: self.toCurrency,
+                fromCurrency: newFromCurrency,
+                toCurrency: self.toCurrency.exchange(amount: amount, btcPrice: currentBtcPrice),
                 account: self.account,
                 currentBtcPrice: self.currentBtcPrice,
-                error: checkError(self.fromCurrency),
+                error: checkError(newFromCurrency),
                 fromUserAction: true
             )
         }
@@ -251,6 +299,7 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
         }
         
         func updateAccount(_ account: Account) -> State {
+            print("****** update account ")
             return State(
                 fromCurrency: self.fromCurrency,
                 toCurrency: self.toCurrency,
@@ -261,6 +310,63 @@ class ExchangeViewController : UIViewController, NSFetchedResultsControllerDeleg
             )
         }
         
-        
+        func resetAmounts() -> State {
+            return State(
+                fromCurrency: self.fromCurrency.updateAmount(0.0),
+                toCurrency: self.toCurrency.updateAmount(0.0),
+                account: self.account,
+                currentBtcPrice: self.currentBtcPrice,
+                error: nil,
+                fromUserAction: false
+            )
+        }
+    }
+}
+
+extension ExchangeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return transactionFetchedResultsController.sections?.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactionFetchedResultsController.sections?[0].numberOfObjects ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Storyboard.cellId, for: indexPath) as! TransactionTableViewCell
+        let transaction = transactionFetchedResultsController.object(at: indexPath)
+        cell.dateLabel.text = transaction.date?.formatDate()
+        let btcPrefix: String
+        let usdPrefix: String
+        if transaction.btcBuy {
+            cell.transactionTypeLabel.text = "Buy BTC"
+            btcPrefix = "+"
+            usdPrefix = "-"
+        } else {
+            cell.transactionTypeLabel.text = "Sell BTC"
+            btcPrefix = "-"
+            usdPrefix = "+"
+        }
+        cell.btcAmountLabel.text = btcPrefix + transaction.btcAmount.to8dp() + " " + Constants.Currencies.BTC
+        cell.usdAmountLabel.text = usdPrefix + transaction.usdAmount.to2dp() + " " + Constants.Currencies.USD
+        return cell
+    }
+}
+
+extension ExchangeViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            transactionsTableView.insertRows(at: [newIndexPath], with: .fade)
+        case .delete:
+            break
+        case .move:
+            break
+        case .update:
+            guard let indexPath = indexPath else { return }
+            transactionsTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
 }
