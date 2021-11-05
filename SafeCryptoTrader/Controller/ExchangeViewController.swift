@@ -36,6 +36,12 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         transactionsTableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpFetchedResultsController()
+        fetchAccount()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         transactionFetchedResultsController = nil
@@ -117,6 +123,7 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         fromAmount.text = nil
         toAmount.text = nil
         state = state.resetAmounts()
+        renderState(state)
     }
     
     fileprivate func startTimer() {
@@ -135,7 +142,7 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         if toCurrency.text != state.toCurrency.name {
             toCurrency.text = state.toCurrency.name
         }
-        if toAmount.text != state.toCurrency.format() && (state.toCurrency.exceededAllowedNumOfDecimalPlaces(toAmount.text!) || !state.fromUserAction) {
+        if toAmount.text != state.toCurrency.format() {
             toAmount.text = state.toCurrency.format()
         }
         exchangeButton.isEnabled = state.error == nil && state.fromCurrency.amount > 0.0
@@ -146,8 +153,6 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
             persistentContainer = sd.persistentContainer
         }
-        setUpFetchedResultsController()
-        fetchAccount()
     }
     
     fileprivate func setUpFetchedResultsController() {
