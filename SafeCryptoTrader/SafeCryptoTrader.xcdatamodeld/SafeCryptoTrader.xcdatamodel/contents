@@ -4,6 +4,9 @@
         <attribute name="btc" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="usd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="ToppedUpAmount" representedClassName="ToppedUpAmount" syncable="YES" codeGenerationType="class">
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="btcAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="btcBuy" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -13,5 +16,6 @@
     <elements>
         <element name="Account" positionX="-54" positionY="-9" width="128" height="59"/>
         <element name="Transaction" positionX="-36" positionY="27" width="128" height="89"/>
+        <element name="ToppedUpAmount" positionX="-18" positionY="63" width="128" height="44"/>
     </elements>
 </model>

@@ -16,10 +16,13 @@ class HomeViewController : UIViewController {
     @IBOutlet weak var btcPrice: UILabel!
     @IBOutlet weak var usdAmount: UILabel!
     @IBOutlet weak var btcAmount: UILabel!
+    @IBOutlet weak var totalToppedUpAmount: UILabel!
+    @IBOutlet weak var totalAccountBalance: UILabel!
     
     var persistentContainer: NSPersistentContainer!
     var accountFetchedResultsController: NSFetchedResultsController<Account>!
     var account: Account? = nil
+    var toppedUpAmountEntity: ToppedUpAmount? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class HomeViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchAccount()
+        fetchToppedUpAmount()
     }
     
     @objc func fireTimer() {
@@ -40,11 +44,21 @@ class HomeViewController : UIViewController {
     }
     
     @IBAction func onTopUpTapped(_ sender: Any) {
+        let defaultTopUp = 100.0
         if let account = account {
-            account.usd += 100.0
+            account.usd += defaultTopUp
+            toppedUpAmountEntity?.value += defaultTopUp
         }
         try? persistentContainer.viewContext.save()
         fetchAccount()
+        fetchToppedUpAmount()
+        if let btcPriceText = btcPrice.text {
+            if let btcPriceDouble = Double(btcPriceText) {
+                calculateTotalAccountBalance(btcPriceDouble)
+            }
+        } else {
+            fetchBitcoinPrice()
+        }
     }
     
     @IBAction func onReloadTapped(_ sender: Any) {
@@ -67,6 +81,29 @@ class HomeViewController : UIViewController {
                 usdAmount.text = account.usd.to2dp()
                 btcAmount.text = account.btc.to8dp()
                 self.account = account
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    fileprivate func getTotalAccountBalance(usd: Double, btc: Double, btcPrice: Double) -> String {
+        return (usd + btc * btcPrice).to2dp()
+    }
+    
+    fileprivate func fetchToppedUpAmount() {
+        let request = ToppedUpAmount.fetchRequest()
+        request.fetchLimit = 1
+        do {
+            let result = try persistentContainer.viewContext.fetch(request)
+            if result.isEmpty {
+                toppedUpAmountEntity = ToppedUpAmount(context: persistentContainer.viewContext)
+                toppedUpAmountEntity!.value = 0.0
+                try? persistentContainer.viewContext.save()
+            }
+            if let toppedUp = result.first {
+                toppedUpAmountEntity = toppedUp
+                totalToppedUpAmount.text = toppedUp.value.to2dp()
             }
         } catch {
             print("Failed")
@@ -98,18 +135,25 @@ class HomeViewController : UIViewController {
         self.btcDailyChange.text = prefix + btc.dailyChange.to2dp()
     }
     
+    fileprivate func calculateTotalAccountBalance(_ btcPrice: Double) {
+        if let usd = self.usdAmount.text, let btc = self.btcAmount.text {
+            if let usdDouble = Double(usd), let btcDouble = Double(btc) {
+                self.totalAccountBalance.text = self.getTotalAccountBalance(usd: usdDouble, btc: btcDouble, btcPrice: btcPrice)
+            }
+        }
+    }
+    
     fileprivate func fetchBitcoinPrice() {
         CryptoService.getBtcPrice { price, error in
             if let error = error {
                 print("BTC price error \(error.localizedDescription)")
                 return
             }
-            if let btc = price {
-                self.btcPrice.text = btc.usd.to2dp()
-                self.formatBtcDailyChange(btc)
+            if let btcPrice = price {
+                self.btcPrice.text = btcPrice.usd.to2dp()
+                self.formatBtcDailyChange(btcPrice)
+                self.calculateTotalAccountBalance(btcPrice.usd)
             }
         }
     }
-    
-    
 }

@@ -304,7 +304,6 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         }
         
         func updateAccount(_ account: Account) -> State {
-            print("****** update account ")
             return State(
                 fromCurrency: self.fromCurrency,
                 toCurrency: self.toCurrency,

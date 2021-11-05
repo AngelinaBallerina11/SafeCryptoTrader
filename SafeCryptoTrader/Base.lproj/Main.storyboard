@@ -286,10 +286,62 @@
                                     <action selector="onReloadTapped:" destination="cAl-Za-10M" eventType="touchUpInside" id="Jtm-3h-81G"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-jQ-J1Y" userLabel="Activity Summary">
+                                <rect key="frame" x="40" y="518" width="334" height="98.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW0-li-ryx">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L6E-X5-tzc">
+                                        <rect key="frame" x="0.0" y="37.5" width="334" height="61"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gcz-ih-9aY">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total added USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os0-Pq-B3f" userLabel="USD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iem-YE-hzI" userLabel="Amount">
+                                                        <rect key="frame" x="257.5" y="0.0" width="76.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eXy-Sd-R1d">
+                                                <rect key="frame" x="0.0" y="40.5" width="334" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total balance USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-Li-8PJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63u-uS-B2V" userLabel="Amount">
+                                                        <rect key="frame" x="263" y="0.0" width="71" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fRi-x9-KP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="bWU-jQ-J1Y" secondAttribute="trailing" constant="40" id="950-3U-gF9"/>
+                            <constraint firstItem="bWU-jQ-J1Y" firstAttribute="leading" secondItem="fRi-x9-KP5" secondAttribute="leading" constant="40" id="Bxg-vZ-DST"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="EpF-Fd-e5i" secondAttribute="trailing" constant="50" id="Gbd-42-Flf"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="ujx-5e-Wik" secondAttribute="trailing" constant="40" id="IMn-pj-KNX"/>
                             <constraint firstItem="EpF-Fd-e5i" firstAttribute="top" secondItem="tif-sw-woH" secondAttribute="bottom" constant="60" id="JG0-zS-Wdm"/>
@@ -302,6 +354,7 @@
                             <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="5" id="mcH-pn-FSs"/>
                             <constraint firstItem="MFX-LV-vIx" firstAttribute="top" secondItem="fRi-x9-KP5" secondAttribute="top" constant="40" id="owf-7g-9CR"/>
                             <constraint firstItem="Xfr-7H-p0p" firstAttribute="centerY" secondItem="ujx-5e-Wik" secondAttribute="centerY" id="rI1-th-JoS"/>
+                            <constraint firstItem="bWU-jQ-J1Y" firstAttribute="top" secondItem="Shn-GM-1og" secondAttribute="bottom" constant="40" id="tZY-ML-tRi"/>
                             <constraint firstItem="EpF-Fd-e5i" firstAttribute="leading" secondItem="fRi-x9-KP5" secondAttribute="leading" constant="50" id="tkt-id-Z7H"/>
                         </constraints>
                     </view>
@@ -311,6 +364,8 @@
                         <outlet property="btcAmount" destination="s80-1b-SIe" id="RWO-0S-Yle"/>
                         <outlet property="btcDailyChange" destination="tif-sw-woH" id="rmN-iN-Ojz"/>
                         <outlet property="btcPrice" destination="ujx-5e-Wik" id="JEb-Ab-Eg2"/>
+                        <outlet property="totalAccountBalance" destination="63u-uS-B2V" id="zAA-Fg-eHH"/>
+                        <outlet property="totalToppedUpAmount" destination="Iem-YE-hzI" id="QeJ-HM-tYj"/>
                         <outlet property="usdAmount" destination="zas-fn-dv8" id="khz-GB-DrZ"/>
                     </connections>
                 </viewController>
