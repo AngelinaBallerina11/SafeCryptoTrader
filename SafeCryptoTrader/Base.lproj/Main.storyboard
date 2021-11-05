@@ -187,10 +187,42 @@
                     <view key="view" contentMode="scaleToFill" id="n3Z-W6-ALB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFX-LV-vIx" userLabel="BTC price Label">
+                                <rect key="frame" x="287.5" y="128" width="86.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujx-5e-Wik" userLabel="BTC price">
+                                <rect key="frame" x="357" y="160" width="17" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tif-sw-woH" userLabel="Daily change value">
+                                <rect key="frame" x="364" y="197" width="10" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fRi-x9-KP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="ujx-5e-Wik" secondAttribute="trailing" constant="40" id="IMn-pj-KNX"/>
+                            <constraint firstItem="ujx-5e-Wik" firstAttribute="top" secondItem="MFX-LV-vIx" secondAttribute="bottom" constant="8" symbolic="YES" id="Zeg-rg-Arm"/>
+                            <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="tif-sw-woH" secondAttribute="trailing" constant="40" id="d1w-gk-TU2"/>
+                            <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="MFX-LV-vIx" secondAttribute="trailing" constant="40" id="hv6-jQ-lNP"/>
+                            <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="8" symbolic="YES" id="mcH-pn-FSs"/>
+                            <constraint firstItem="MFX-LV-vIx" firstAttribute="top" secondItem="fRi-x9-KP5" secondAttribute="top" constant="40" id="owf-7g-9CR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-iy-4iA"/>
+                    <connections>
+                        <outlet property="btcDailyChange" destination="tif-sw-woH" id="rmN-iN-Ojz"/>
+                        <outlet property="btcPrice" destination="ujx-5e-Wik" id="JEb-Ab-Eg2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2T-mW-xyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
