@@ -10,6 +10,8 @@ Bitcoin value has risen over 80 percent in the past several months to reach all-
 
 Therefore, I have created this app as a safe place to try investing in Bitcoin without the risk of loosing money. All the transactions are performed locally and no money would be lost if the Bitcoin price drops quickly. A user can create an account and top up fake US dollars to the app. Then when the price is good to buy, the user can buy the Bitcoin and store it. The user can also sell the Bitcoin and convert the coin back to the US dollars. The app shows the total balance of both currencies and the total USD amount added to the account. By comparing these numbers, the user can decide if they made some profit over the time or not.
 
+![App screens](screens.png)
+
 ## Environment
 
 Since technology is ever evolving, and Apple updates it's development environment yearly, deprecating features and updating languages fast, I cannot guarantee for how long this code will continue working. This app was created with the following environment in mind:
@@ -24,6 +26,10 @@ Since technology is ever evolving, and Apple updates it's development environmen
 This project uses [CocoaPods](https://cocoapods.org/) for it's dependencies. To initalize the project you should first install CocoaPods and then initialize the dependencies by running
 
 > pod install
+
+on ARM architecture run
+
+> arch -x86_64 pod install
 
 After that, open the project using the SafeCryptoTrader.xcworkspace created by CocoaPods.
 
