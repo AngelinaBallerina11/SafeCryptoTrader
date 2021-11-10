@@ -18,9 +18,9 @@ class HomeViewController : UIViewController {
     @IBOutlet weak var btcAmount: UILabel!
     @IBOutlet weak var totalToppedUpAmount: UILabel!
     @IBOutlet weak var totalAccountBalance: UILabel!
-    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
     var persistentContainer: NSPersistentContainer!
-    var accountFetchedResultsController: NSFetchedResultsController<Account>!
     var account: Account? = nil
     var toppedUpAmountEntity: ToppedUpAmount? = nil
     
@@ -36,6 +36,12 @@ class HomeViewController : UIViewController {
         super.viewWillAppear(animated)
         fetchAccount()
         fetchToppedUpAmount()
+        OrientationHelper.lockOrientation(UIInterfaceOrientationMask.portrait)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        OrientationHelper.lockOrientation(UIInterfaceOrientationMask.all)
     }
     
     @objc func fireTimer() {
@@ -144,9 +150,12 @@ class HomeViewController : UIViewController {
     }
     
     fileprivate func fetchBitcoinPrice() {
+        loadingIndicator.startAnimating()
         CryptoService.getBtcPrice { price, error in
+            self.loadingIndicator.stopAnimating()
             if let error = error {
                 print("BTC price error \(error.localizedDescription)")
+                self.showErrorAlert(message: error.localizedDescription)
                 return
             }
             if let btcPrice = price {

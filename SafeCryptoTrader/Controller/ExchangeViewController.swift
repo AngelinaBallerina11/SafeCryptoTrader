@@ -40,11 +40,13 @@ class ExchangeViewController : UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
         setUpFetchedResultsController()
         fetchAccount()
+        OrientationHelper.lockOrientation(UIInterfaceOrientationMask.portrait)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         transactionFetchedResultsController = nil
+        OrientationHelper.lockOrientation(UIInterfaceOrientationMask.all)
     }
     
     @objc func fireTimer() {

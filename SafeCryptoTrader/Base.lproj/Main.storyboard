@@ -65,7 +65,6 @@
                     <connections>
                         <outlet property="signInButton" destination="T0w-Sy-fAW" id="tTJ-q3-kEL"/>
                         <outlet property="signUpButton" destination="pA2-cm-wKa" id="cQH-ae-iuO"/>
-                        <segue destination="5ex-cf-f1D" kind="show" identifier="showHomeScreen" id="Prh-V1-YsD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rA2-Zn-Afw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,20 +335,26 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wGe-o4-0wH">
+                                <rect key="frame" x="285" y="162" width="20" height="25.5"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fRi-x9-KP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="bWU-jQ-J1Y" secondAttribute="trailing" constant="40" id="950-3U-gF9"/>
                             <constraint firstItem="bWU-jQ-J1Y" firstAttribute="leading" secondItem="fRi-x9-KP5" secondAttribute="leading" constant="40" id="Bxg-vZ-DST"/>
+                            <constraint firstItem="wGe-o4-0wH" firstAttribute="top" secondItem="MFX-LV-vIx" secondAttribute="bottom" constant="12.5" id="E29-l5-sh1"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="EpF-Fd-e5i" secondAttribute="trailing" constant="50" id="Gbd-42-Flf"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="ujx-5e-Wik" secondAttribute="trailing" constant="40" id="IMn-pj-KNX"/>
                             <constraint firstItem="EpF-Fd-e5i" firstAttribute="top" secondItem="tif-sw-woH" secondAttribute="bottom" constant="60" id="JG0-zS-Wdm"/>
                             <constraint firstItem="ujx-5e-Wik" firstAttribute="leading" secondItem="Xfr-7H-p0p" secondAttribute="trailing" id="Shg-Bd-c17"/>
                             <constraint firstItem="Shn-GM-1og" firstAttribute="centerX" secondItem="n3Z-W6-ALB" secondAttribute="centerX" id="Wgn-nU-ulT"/>
+                            <constraint firstItem="Xfr-7H-p0p" firstAttribute="leading" secondItem="wGe-o4-0wH" secondAttribute="trailing" constant="8" symbolic="YES" id="Yu3-7e-cJG"/>
                             <constraint firstItem="ujx-5e-Wik" firstAttribute="top" secondItem="MFX-LV-vIx" secondAttribute="bottom" constant="8" symbolic="YES" id="Zeg-rg-Arm"/>
                             <constraint firstItem="Shn-GM-1og" firstAttribute="top" secondItem="EpF-Fd-e5i" secondAttribute="bottom" constant="40" id="cB6-oR-fX3"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="tif-sw-woH" secondAttribute="trailing" constant="40" id="d1w-gk-TU2"/>
+                            <constraint firstItem="Xfr-7H-p0p" firstAttribute="bottom" secondItem="wGe-o4-0wH" secondAttribute="bottom" id="dHp-Wq-zR9"/>
                             <constraint firstItem="fRi-x9-KP5" firstAttribute="trailing" secondItem="MFX-LV-vIx" secondAttribute="trailing" constant="40" id="hv6-jQ-lNP"/>
                             <constraint firstItem="tif-sw-woH" firstAttribute="top" secondItem="ujx-5e-Wik" secondAttribute="bottom" constant="5" id="mcH-pn-FSs"/>
                             <constraint firstItem="MFX-LV-vIx" firstAttribute="top" secondItem="fRi-x9-KP5" secondAttribute="top" constant="40" id="owf-7g-9CR"/>
@@ -364,6 +369,7 @@
                         <outlet property="btcAmount" destination="s80-1b-SIe" id="RWO-0S-Yle"/>
                         <outlet property="btcDailyChange" destination="tif-sw-woH" id="rmN-iN-Ojz"/>
                         <outlet property="btcPrice" destination="ujx-5e-Wik" id="JEb-Ab-Eg2"/>
+                        <outlet property="loadingIndicator" destination="wGe-o4-0wH" id="qQp-87-PwO"/>
                         <outlet property="totalAccountBalance" destination="63u-uS-B2V" id="zAA-Fg-eHH"/>
                         <outlet property="totalToppedUpAmount" destination="Iem-YE-hzI" id="QeJ-HM-tYj"/>
                         <outlet property="usdAmount" destination="zas-fn-dv8" id="khz-GB-DrZ"/>
@@ -779,7 +785,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hlk-Ja-bUv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7D8-eU-IAu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="startupNavVC" automaticallyAdjustsScrollViewInsets="NO" id="7D8-eU-IAu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AqA-cK-PZ0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

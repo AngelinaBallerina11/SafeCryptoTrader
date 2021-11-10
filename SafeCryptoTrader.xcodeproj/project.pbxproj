@@ -35,6 +35,8 @@
 		9E36AFFF27359454002FD709 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36AFFE27359454002FD709 /* TransactionTableViewCell.swift */; };
 		9E36B0012735989A002FD709 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36B0002735989A002FD709 /* DateFormatter.swift */; };
 		9E36B003273654B5002FD709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E36B002273654B5002FD709 /* GoogleService-Info.plist */; };
+		ABD6E3ED273A91F0008E046E /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6E3EC273A91F0008E046E /* AuthenticationService.swift */; };
+		ABD6E3EF273AA104008E046E /* OrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6E3EE273AA104008E046E /* OrientationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		9E36AFFE27359454002FD709 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		9E36B0002735989A002FD709 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		9E36B002273654B5002FD709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABD6E3EC273A91F0008E046E /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		ABD6E3EE273AA104008E046E /* OrientationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationHelper.swift; sourceTree = "<group>"; };
 		B94D747EA8F03490B88873B3 /* Pods-SafeCryptoTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.release.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.release.xcconfig"; sourceTree = "<group>"; };
 		D3EBD03BACFAEB7F4B42FE47 /* Pods-SafeCryptoTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeCryptoTrader.debug.xcconfig"; path = "Target Support Files/Pods-SafeCryptoTrader/Pods-SafeCryptoTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		EEE17D2D06FF5121E42BF006 /* Pods_SafeCryptoTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeCryptoTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,7 @@
 				9E36AFC12733FAFA002FD709 /* LaunchScreen.storyboard */,
 				9E36AFC42733FAFA002FD709 /* Info.plist */,
 				9E36AFBC2733FAF9002FD709 /* SafeCryptoTrader.xcdatamodeld */,
+				ABD6E3EC273A91F0008E046E /* AuthenticationService.swift */,
 			);
 			path = SafeCryptoTrader;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				9E36AFEA27346CDF002FD709 /* Constants.swift */,
 				9E36AFFA27354B21002FD709 /* FormattingHelper.swift */,
 				9E36B0002735989A002FD709 /* DateFormatter.swift */,
+				ABD6E3EE273AA104008E046E /* OrientationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -328,11 +334,13 @@
 				9E36B0012735989A002FD709 /* DateFormatter.swift in Sources */,
 				9E36AFD82734286D002FD709 /* SignUpViewController.swift in Sources */,
 				9E36AFFB27354B21002FD709 /* FormattingHelper.swift in Sources */,
+				ABD6E3EF273AA104008E046E /* OrientationHelper.swift in Sources */,
 				9E36AFB62733FAF9002FD709 /* SceneDelegate.swift in Sources */,
 				9E36AFF9273520EE002FD709 /* BitcoinPrice.swift in Sources */,
 				9E36AFDB273428A4002FD709 /* HomeViewController.swift in Sources */,
 				9E36AFFF27359454002FD709 /* TransactionTableViewCell.swift in Sources */,
 				9E36AFFD27356A7E002FD709 /* Currency.swift in Sources */,
+				ABD6E3ED273A91F0008E046E /* AuthenticationService.swift in Sources */,
 				9E36AFEB27346CDF002FD709 /* Constants.swift in Sources */,
 				9E36AFDD27342C45002FD709 /* StartupViewController.swift in Sources */,
 				9E36AFED27346E2B002FD709 /* ExchangeViewController.swift in Sources */,
@@ -496,6 +504,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,6 +534,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

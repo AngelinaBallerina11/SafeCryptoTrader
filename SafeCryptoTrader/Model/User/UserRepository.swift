@@ -24,11 +24,11 @@ class UserRepository {
         lastName: String,
         userName: String,
         password: String,
-        completion: @escaping (Bool, Error?) -> Void
+        completion: @escaping (Error?) -> Void
     ) {
         Auth.auth().createUser(withEmail: userName, password: password) { authResult, error in
             if let error = error {
-                completion(false, error)
+                completion(error)
             } else {
                 let db = Firestore.firestore()
                 db.collection(FirestoreConstant.usersCollection).addDocument(data: [
@@ -36,12 +36,7 @@ class UserRepository {
                     FirestoreConstant.userLastNameField: lastName,
                     FirestoreConstant.userIdField: authResult!.user.uid
                 ]) { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                        completion(false, err)
-                    } else {
-                        completion(true, nil)
-                    }
+                    completion(err)
                 }
             }
         }
@@ -50,17 +45,13 @@ class UserRepository {
     class func signIn(
         email: String,
         password: String,
-        completion: @escaping (Bool, Error?) -> Void
+        completion: @escaping (Error?) -> Void
     ) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(false, error)
-            } else {
-                completion(true, nil)
-            }
+            completion(error)
         }
     }
-    
+
     class func logout(completion: @escaping (Error?) -> Void) {
         let firebaseAuth = Auth.auth()
         do {
@@ -71,7 +62,7 @@ class UserRepository {
             print("Error signing out: %@", signOutError)
         }
     }
-    
+
     class func getUserInfo(completion: @escaping (User?, Error?) -> Void) {
         if let currentUser = Auth.auth().currentUser {
             Firestore.firestore()

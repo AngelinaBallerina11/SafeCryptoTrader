@@ -17,6 +17,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        OrientationHelper.lockOrientation(.portrait)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        OrientationHelper.lockOrientation(.all)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,22 +53,14 @@ class SignUpViewController: UIViewController {
             firstName: firstNameTextField.text!.trim(),
             lastName: lastNameTextField.text!.trim(),
             userName: emailTextField.text!.trim(),
-            password: passwordTextField.text!.trim()) { success, error in
+            password: passwordTextField.text!.trim()) { error in
                 self.showLoading(false)
                 if let error = error {
                     self.showError(error.localizedDescription)
                     return
                 }
-                if success {
-                    self.transitionToHomeScreen()
-                }
+                AuthenticationService().selectFirstScreen()
             }
-    }
-    
-    fileprivate func transitionToHomeScreen() {
-        let dashboard = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarViewController) as? TabBarController
-        view.window?.rootViewController = dashboard
-        view.window?.makeKeyAndVisible()
     }
     
     fileprivate func validateFields() -> String? {

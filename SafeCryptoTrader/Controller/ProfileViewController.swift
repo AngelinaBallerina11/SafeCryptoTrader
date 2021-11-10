@@ -37,16 +37,8 @@ class ProfileViewController: UIViewController {
             if let error = error {
                 self.showErrorAlert(message: error.localizedDescription)
             } else {
-                self.navigateToStartupScreen()
+                AuthenticationService().selectFirstScreen()
             }
         }
-    }
-    
-    fileprivate func navigateToStartupScreen() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "StartupVC") as! StartupViewController
-        navigationController?.popToRootViewController(animated: true)
-        let newNavController = UINavigationController(rootViewController: vc)
-        navigationController?.isNavigationBarHidden = false
-        view.window?.rootViewController = newNavController
     }
 }

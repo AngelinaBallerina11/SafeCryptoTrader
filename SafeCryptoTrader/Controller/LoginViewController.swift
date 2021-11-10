@@ -16,6 +16,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        OrientationHelper.lockOrientation(.portrait)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        OrientationHelper.lockOrientation(.all)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +44,13 @@ class LoginViewController: UIViewController {
         showLoading(true)
         UserRepository.signIn(
             email: emailTextField.text!.trim(),
-            password: passwordTextField.text!.trim()) { success, error in
+            password: passwordTextField.text!.trim()) { error in
                 self.showLoading(false)
                 if let error = error {
                     self.showError(error.localizedDescription)
                     return
                 }
-                if success {
-                    self.transitionToHomeScreen()
-                }
+                AuthenticationService().selectFirstScreen()
             }
     }
     
@@ -80,11 +88,5 @@ class LoginViewController: UIViewController {
         } else {
             loadingIndicator.stopAnimating()
         }
-    }
-    
-    fileprivate func transitionToHomeScreen() {
-        let dashboard = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarViewController) as? TabBarController
-        view.window?.rootViewController = dashboard
-        view.window?.makeKeyAndVisible()
     }
 }
